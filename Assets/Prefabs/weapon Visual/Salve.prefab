@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8493656537440609473}
   m_Layer: 0
   m_Name: Salve
-  m_TagString: BlueTeam
+  m_TagString: RedTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
