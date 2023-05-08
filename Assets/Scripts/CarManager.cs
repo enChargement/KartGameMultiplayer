@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -11,9 +12,11 @@ public class CarManager : MonoBehaviour
     private float _steer = 0f;
     private float _acceleration = 0f;
     private bool _canDrift = false;
-    public bool _isDrifting = false;
+    private bool _isDrifting = false;
+    private bool _isTurbo = false;
     private float _driftTimer = 0f;
     private bool _grounded = true;
+    private bool _needRotCorrection = false;
 
     private Vector3 _localVelocity;
 
@@ -28,7 +31,8 @@ public class CarManager : MonoBehaviour
     public float DriftImpulseForce = 30f;
 
     [Space(10)]
-    public Transform GroundedPoint;
+    public Transform GroundedPointLeft;
+    public Transform GroundedPointRight;
 
     [Header("Wheels Transform")]
     public Transform FL_turn;
@@ -56,8 +60,9 @@ public class CarManager : MonoBehaviour
 
     public List<ParticleSystem> RightSparkles = new List<ParticleSystem>();
 
-
     public List<TrailRenderer> TrailDrifts = new List<TrailRenderer>();
+
+    public List<ParticleSystem> ExhaustFlames = new List<ParticleSystem>();
 
     void Start()
     {
@@ -103,9 +108,21 @@ public class CarManager : MonoBehaviour
     }
     private void IsGrounded()
     {
-        RaycastHit hit;
-        _grounded = Physics.Raycast(GroundedPoint.position, -GroundedPoint.up, out hit, 0.1f);
-        Debug.DrawRay(GroundedPoint.position, -GroundedPoint.up * .1f, Color.green);
+
+        bool left = Physics.Raycast(GroundedPointLeft.position, -GroundedPointLeft.up, out RaycastHit hitleft, 0.1f);
+        bool right = Physics.Raycast(GroundedPointRight.position, -GroundedPointLeft.up, out RaycastHit hitright, 0.1f);
+        if (left && hitleft.collider.tag.Equals("Wall"))
+        {
+            left = false;
+        }
+        if (right && hitright.collider.tag.Equals("Wall"))
+        {
+            right = false;
+        }
+        _grounded = left || right;
+        _needRotCorrection = !left || !right;
+        Debug.DrawRay(GroundedPointLeft.position, -GroundedPointLeft.up * .1f, Color.green);
+        Debug.DrawRay(GroundedPointRight.position, -GroundedPointLeft.up * .1f, Color.green);
     }
 
     #endregion
@@ -166,6 +183,16 @@ public class CarManager : MonoBehaviour
         }
     }
 
+    public bool IsTurbo()
+    {
+        return _isTurbo;
+    }
+
+    public bool IsDrifting()
+    {
+        return _isDrifting;
+    }
+
     /// <summary>
     /// Defines the rotation of the car during the drift
     /// </summary>
@@ -197,7 +224,7 @@ public class CarManager : MonoBehaviour
         {
             _localVelocity.x = _localVelocity.x + InversionAxisVelocity * Time.fixedDeltaTime;
         }
-        _localVelocity.z = _localVelocity.z + InversionAxisVelocity / 2 * Time.fixedDeltaTime;
+        _localVelocity.z = _localVelocity.z + InversionAxisVelocity/3 * Time.fixedDeltaTime;
         rb.velocity = transform.TransformDirection(_localVelocity);
     }
 
@@ -210,20 +237,23 @@ public class CarManager : MonoBehaviour
         {
             return;
         }
-        rb.AddForce(transform.forward * (DriftImpulseForce + _sparklesIndex * DriftImpulseForce),ForceMode.Impulse);
+        rb.AddForce(transform.forward * (30f + _sparklesIndex * DriftImpulseForce),ForceMode.Impulse);
         _driftTimer = 0f;
+        StartCoroutine(SetExhaustsFlame(_sparklesIndex));
         
     }
 
     private void AddGravity()
     {
         rb.AddForce(Vector3.down * gravityMultiplier);
+
+        Debug.DrawRay(transform.position, Vector3.down * gravityMultiplier, Color.green);
     }
 
     private void CorrectRotation()
     {
         
-        if (!_grounded)
+        if (_needRotCorrection)
         {
             var carRotation = rb.transform.rotation.eulerAngles;
             var LerpX = Mathf.LerpAngle(carRotation.x, 0, RealignementForce * 0.0001f);
@@ -244,11 +274,12 @@ public class CarManager : MonoBehaviour
 
     private void TurnWheel()
     {
-
-        FL.transform.Rotate(Vector3.right, _localVelocity.z * visualSpeed);
-        FR.transform.Rotate(Vector3.right, _localVelocity.z * visualSpeed);
-        BL.transform.Rotate(Vector3.right, _localVelocity.z * visualSpeed);
-        BR.transform.Rotate(Vector3.right, _localVelocity.z * visualSpeed);
+        float angle = rb.velocity.magnitude * (_localVelocity.z > 0 ? 1 : -1) * visualSpeed;
+        float multiplier = _isDrifting ? 1.5f : 1;
+        FL.transform.Rotate(Vector3.right, angle);
+        FR.transform.Rotate(Vector3.right, angle);
+        BL.transform.Rotate(Vector3.right, angle * multiplier);
+        BR.transform.Rotate(Vector3.right, angle * multiplier);
     }
 
     private void PlayDriftParticles()
@@ -301,6 +332,15 @@ public class CarManager : MonoBehaviour
         else if (_driftTimer < 2.5f) { SetSparklesIndex(0); }
         else if (_driftTimer < 4f) { SetSparklesIndex(1); }
         else if (_driftTimer >= 4) { SetSparklesIndex(2); }
+    }
+
+    private IEnumerator SetExhaustsFlame(int index)
+    {
+        _isTurbo = true;
+        ExhaustFlames.ForEach(ps => ps.Play());
+        yield return new WaitForSeconds(.5f + index * .5f);
+        ExhaustFlames.ForEach(ps => ps.Stop());
+        _isTurbo = false;
     }
 
     #endregion

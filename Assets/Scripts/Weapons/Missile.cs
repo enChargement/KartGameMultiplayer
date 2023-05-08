@@ -22,7 +22,7 @@ public class Missile : Weapon
     {
         string myTag = tag;
         string otherTag = other.tag;
-        if (otherTag.Equals("Ground"))
+        if (otherTag.Equals("Ground") || otherTag.Equals("Wall"))
         {
             Destroy(gameObject);
         }

@@ -24,10 +24,13 @@ public class TurretVisual : WeaponVisual
     }
     private void LookAtCurrentEnemy()
     {
-        if (_weaponInstance.IsTherAnEnemy())
+        if (_weaponInstance)
         {
             GameObject enemy = _weaponInstance.GetEnnemyTransform();
-
+            if (enemy is null)
+            {
+                return;
+            }
             _head.LookAt(enemy.transform);
             _head.rotation *= Quaternion.Euler(-90, 90, 1);
             

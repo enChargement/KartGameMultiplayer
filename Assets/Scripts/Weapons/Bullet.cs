@@ -21,7 +21,7 @@ public class Bullet : Weapon
     private void OnTriggerEnter(Collider other)
     {
         string otherTag = other.tag;
-        if (otherTag.Equals("Ground"))
+        if (otherTag.Equals("Ground") || otherTag.Equals("Wall"))
         {
             Destroy(gameObject);
         }

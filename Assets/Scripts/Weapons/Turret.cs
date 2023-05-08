@@ -23,11 +23,6 @@ public class Turret : Weapon
         return _enemy;
     }
 
-    public bool IsTherAnEnemy()
-    {
-        return _enemy;
-    }
-
     private void SetCurrentEnemy()
     {
         if( _listEnemy.Count > 0)
@@ -70,8 +65,8 @@ public class Turret : Weapon
         if (Time.time > nextActionTime)
         {
             nextActionTime = Time.time + period;
-
-            DamagePlayer(_enemy);
+            if(_enemy != null)
+                DamagePlayer(_enemy);
         }
     }
 

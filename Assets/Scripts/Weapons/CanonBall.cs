@@ -21,7 +21,7 @@ public class CanonBall : Weapon
     private void OnCollisionEnter(Collision collision)
     {
         string colTag = collision.gameObject.tag;
-        if(colTag.Equals("Ground") || colTag.Equals("RedTeam") || colTag.Equals("BlueTeam"))
+        if(colTag.Equals("Ground") || colTag.Equals("Wall") || colTag.Equals("RedTeam") || colTag.Equals("BlueTeam"))
         {
             ballRenderer.enabled = false;
             explosion.SetActive(true);
@@ -31,7 +31,7 @@ public class CanonBall : Weapon
     private void OnTriggerEnter(Collider other)
     {
         string otherTag = other.tag;
-        if (otherTag.Equals("Ground"))
+        if (otherTag.Equals("Ground") || otherTag.Equals("Wall"))
         {
             Destroy(gameObject);
         }

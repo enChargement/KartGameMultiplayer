@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: -2507005135412031239}
   m_Layer: 0
   m_Name: Nuclear Rocket Launcher
-  m_TagString: BlueTeam
+  m_TagString: RedTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

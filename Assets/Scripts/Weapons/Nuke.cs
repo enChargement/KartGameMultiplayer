@@ -22,7 +22,7 @@ public class Nuke : Weapon
     private void OnTriggerEnter(Collider other)
     {
         string otherTag = other.tag;
-        if (otherTag.Equals("Ground"))
+        if (otherTag.Equals("Ground") || otherTag.Equals("Wall"))
         {
             Destroy(gameObject);
         }
@@ -37,7 +37,7 @@ public class Nuke : Weapon
         string myTag = tag;
         string otherTag = collision.gameObject.tag;
         Debug.Log("mytag : " + myTag + "otherTag : " + otherTag);
-        if (otherTag.Equals("Ground"))
+        if (otherTag.Equals("Ground") || otherTag.Equals("Wall"))
         {
             Explosion();
         }
