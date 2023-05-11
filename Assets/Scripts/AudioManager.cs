@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("magnitude : " + rb.velocity.magnitude);
+
         float speed = rb.velocity.magnitude;
         if(speed < 0.3)
         {

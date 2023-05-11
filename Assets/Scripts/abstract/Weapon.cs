@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
             player.GetDamaged(Damage);
         }
     }
-    public void CheckTags(string otherTag,Collider other)
+    public bool CheckTags(string otherTag,Collider other)
     {
         string myTag = tag;
         switch (myTag)
@@ -24,25 +24,30 @@ public abstract class Weapon : MonoBehaviour
                 {
                     DamagePlayer(other.gameObject);
                    Destroy(gameObject);
+                    return true;
                 }
                 else if (otherTag.Equals("RedTeam"))
                 {
-                    return;
+                    return false;
                 }
+                return false;
                 break;
             case "BlueTeam":
                 if (otherTag.Equals("RedTeam"))
                 {
                     DamagePlayer(other.gameObject);
                     Destroy(gameObject);
+                    return true;
                 }
                 else if (otherTag.Equals("BlueTeam"))
                 {
-                    return;
+                    return false;
                 }
+                return false;
                 break;
             default:
                 Destroy(gameObject);
+                return true;
                 break;
         }
     }

@@ -7,6 +7,9 @@ public class BulletVisual : WeaponVisual
     private string _name = "Bullet";
     public override string WeaponName { get { return _name; } set => _name = value; }
 
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
+
     public override IEnumerator ActivateWeapon(Vector3 spawnVelocity, Action reset)
     {
         for (int i = 0; i < 8; i++)
@@ -17,6 +20,9 @@ public class BulletVisual : WeaponVisual
                 Vector3 right = FirePoint.right;
                 position += right * j * 0.2f;
 
+                ParticleSystem ps = Instantiate(muzzleFlash,FirePoint);
+                ps.transform.Rotate(Vector3.up, 90);
+                ps.transform.position = position;
                 GameObject missile = Instantiate(Weapon, position, FirePoint.rotation);
                 Rigidbody body = missile.GetComponent<Rigidbody>();
 

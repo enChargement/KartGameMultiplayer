@@ -9,6 +9,7 @@ public class CanonBall : Weapon
 
     private float _damage = 60f;
     private float _velocity = 0f;
+    [SerializeField] private ParticleSystem _explosion;
 
     protected override float Damage { get { return _damage; } set { _damage = value; } }
     protected override float Velocity { get { return _velocity; } set { _velocity = value; } }
@@ -25,6 +26,7 @@ public class CanonBall : Weapon
         {
             ballRenderer.enabled = false;
             explosion.SetActive(true);
+            Instantiate(_explosion, transform.position, Quaternion.identity);
         }
     }
 

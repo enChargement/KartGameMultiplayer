@@ -30,7 +30,7 @@ public class WeaponsManager : MonoBehaviour
             string name = weapon.WeaponName;
             Debug.Log("NAME : " + name);
             prefab.tag = tag;
-            prefab.transform.rotation =  Quaternion.Euler(Vector3.zero);
+            //prefab.transform.rotation =  Quaternion.Euler(Vector3.zero);
             switch (name)
             {
                 case "CanonBall":

@@ -85,7 +85,6 @@ public class CarManager : MonoBehaviour
         AddGravity();
         CorrectRotation();
 
-        Debug.Log("drift velocity : "+ _localVelocity);
 
         //car visuals
     }

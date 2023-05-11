@@ -5,6 +5,7 @@ public class Nuke : Weapon
     private float _damage = 100f;
     private float _velocity = 10f;
     [SerializeField] private GameObject _explosionCollider;
+    [SerializeField] private ParticleSystem _explosion;
     protected override float Damage { get { return _damage; } set { _damage = value; } }
     protected override float Velocity { get { return _velocity; } set { _velocity = value; } }
 
@@ -16,6 +17,7 @@ public class Nuke : Weapon
     private void Explosion()
     {
         Velocity = 0;
+        Instantiate(_explosion,transform.position,Quaternion.identity);
         _explosionCollider.SetActive(true);
     }
 

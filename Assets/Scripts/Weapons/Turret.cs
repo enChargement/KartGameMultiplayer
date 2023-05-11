@@ -7,7 +7,7 @@ public class Turret : Weapon
     private float _velocity = 0f;
 
     List<GameObject> _listEnemy = new List<GameObject>();
-    GameObject _enemy;
+    [SerializeField] GameObject _enemy;
     protected override float Damage { get { return _damage; } set { _damage = value; } }
     protected override float Velocity { get { return _velocity; } set { _velocity = value; } }
     private float nextActionTime = 0.0f;
