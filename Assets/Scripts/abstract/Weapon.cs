@@ -31,7 +31,6 @@ public abstract class Weapon : MonoBehaviour
                     return false;
                 }
                 return false;
-                break;
             case "BlueTeam":
                 if (otherTag.Equals("RedTeam"))
                 {
@@ -44,11 +43,9 @@ public abstract class Weapon : MonoBehaviour
                     return false;
                 }
                 return false;
-                break;
             default:
                 Destroy(gameObject);
                 return true;
-                break;
         }
     }
 

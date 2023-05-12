@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 5633638554178757493}
   - component: {fileID: 5633638554178757490}
   - component: {fileID: 5320198269304817568}
+  - component: {fileID: -8939410544371378528}
   m_Layer: 0
   m_Name: Nuke
   m_TagString: Untagged
@@ -164,6 +165,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionCollider: {fileID: 5633638555211601706}
   _explosion: {fileID: 19800002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 3}
+--- !u!114 &-8939410544371378528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633638554178757491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a2ace4ceb05f64db75b8ed586185eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBeforeDestroy: 20
 --- !u!1 &5633638555211601706
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +221,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4022599838986604460
 PrefabInstance:
