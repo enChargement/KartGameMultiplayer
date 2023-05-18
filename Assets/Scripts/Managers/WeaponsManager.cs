@@ -111,6 +111,7 @@ public class WeaponsManager : MonoBehaviour
         if (_health > 0) return;
         if (!carManager.IsDead)
             _health = 100f;
+        Debug.Log("invoke deadstate");
             StartCoroutine(carManager.DeadState());
     }
 

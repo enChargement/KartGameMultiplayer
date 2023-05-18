@@ -37,6 +37,7 @@ public class CarManager : NetworkBehaviour
 
     public Transform GroundedPointLeft;
     public Transform GroundedPointRight;
+    [SerializeField] private GameObject camera;
 
     [Header("Visual Transform")]
     public Transform VisualCar;
@@ -81,20 +82,24 @@ public class CarManager : NetworkBehaviour
 
     public List<ParticleSystem> ExhaustFlames = new List<ParticleSystem>();
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
         rb = GetComponent<Rigidbody>();
+        if (IsOwner)
+        {
+            camera.SetActive(true);
+        }
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!IsOwner) return;
         if (IsDead) return; 
         _localVelocity = transform.InverseTransformDirection(rb.velocity);
         //before physic
         IsGrounded();
-        GetInputs();
 
         //Physic
         ForwardForce();
@@ -109,6 +114,9 @@ public class CarManager : NetworkBehaviour
 
     private void Update()
     {
+        if (!IsOwner) return;
+
+        GetInputs();
         SteeringWheel();
         TurnWheel();
         CheckSparklesDrift();
@@ -291,7 +299,7 @@ public class CarManager : NetworkBehaviour
 
     private void AddGravity()
     {
-        rb.AddForce(Vector3.down * gravityMultiplier);
+        //rb.AddForce(Vector3.down * gravityMultiplier);
 
         Debug.DrawRay(transform.position, Vector3.down * gravityMultiplier, Color.green);
     }
@@ -301,10 +309,11 @@ public class CarManager : NetworkBehaviour
         
         if (_needRotCorrection)
         {
+           /* Debug.Log("Rotation correction");
             var carRotation = rb.transform.rotation.eulerAngles;
             var LerpX = Mathf.LerpAngle(carRotation.x, 0, RealignementForce * 0.0001f);
             var LerpZ = Mathf.LerpAngle(carRotation.z, 0, RealignementForce * 0.0001f);
-            rb.rotation = Quaternion.Euler(new Vector3(LerpX,carRotation.y,LerpZ));
+            rb.rotation = Quaternion.Euler(new Vector3(LerpX,carRotation.y,LerpZ));*/
         }
     }
     #endregion
