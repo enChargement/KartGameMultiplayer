@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614837097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913577975}
   - component: {fileID: 4857025415125566055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: turnFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1155901806}
   - component: {fileID: 6840212823456775746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: turnFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2128220012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 843425958171407126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072910162424068679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightTire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 3885460564180508359}
   - component: {fileID: 6683938197453798175}
   - component: {fileID: 3427819211709015003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7405950955415657740}
   - component: {fileID: 2502457200196176412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TrailLeftDrift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 3273618144114221459}
   - component: {fileID: 3326370833274076582}
   - component: {fileID: 5256047703665050003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RearRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,16 +1107,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1675352941512431877}
-  - component: {fileID: 1675352941512431876}
-  - component: {fileID: 1381857973597186184}
   - component: {fileID: 1675352941512431879}
   - component: {fileID: 509148119}
   - component: {fileID: 1675352941512431878}
   - component: {fileID: 173110467328103312}
   - component: {fileID: 1203786402891003307}
-  - component: {fileID: -3660122085068885354}
-  - component: {fileID: 5211598464972863172}
-  - component: {fileID: -440427352092568976}
+  - component: {fileID: 1665627029514301432}
+  - component: {fileID: -4447572047150219218}
   m_Layer: 6
   m_Name: Car
   m_TagString: RedTeam
@@ -1143,35 +1140,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1675352941512431876
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675352941512431873}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 1
-  m_AngularDrag: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!135 &1381857973597186184
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675352941512431873}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.26
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &1675352941512431879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1210,6 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2bb3f6854a76243a8e3a297571a299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   IsDead: 0
   speed: 60
   turn: 8
@@ -1222,6 +1191,7 @@ MonoBehaviour:
   GroundedPointLeft: {fileID: 382129010}
   GroundedPointRight: {fileID: 205262492}
   camera: {fileID: 1675352942158133580}
+  Sphere: {fileID: 6693006532802761855, guid: d3512632cdcb32f498809c49b8773ca0, type: 3}
   VisualCar: {fileID: 843425958171407126}
   FL_turn: {fileID: 913577975}
   FR_turn: {fileID: 1155901806}
@@ -1289,7 +1259,7 @@ MonoBehaviour:
   idle: {fileID: 8300000, guid: c502041826854664683f9914f63427b0, type: 3}
   Gear1: {fileID: 8300000, guid: 52ee6439e2a5bf749832ea3e0c42d1c7, type: 3}
   Gear2: {fileID: 8300000, guid: 0c62ed23f67dfb647a66e0b33f8083d3, type: 3}
---- !u!114 &-3660122085068885354
+--- !u!114 &1665627029514301432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1305,7 +1275,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &5211598464972863172
+--- !u!114 &-4447572047150219218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1314,7 +1284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675352941512431873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c337e7baf2adcc54da5e9ee2a1ab0249, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
@@ -1331,18 +1301,6 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &-440427352092568976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675352941512431873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1675352941782298260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1647,7 @@ GameObject:
   - component: {fileID: 2315675867640022956}
   - component: {fileID: 3826605234488612318}
   - component: {fileID: 6711894859985685269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontRightWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,7 +1765,7 @@ GameObject:
   - component: {fileID: 5726219557459645121}
   - component: {fileID: 1668480034979195857}
   - component: {fileID: 5970852431889203115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spoiler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1888,7 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341257532122955232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8513918110899001670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TireDriftTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1956,7 +1914,7 @@ GameObject:
   - component: {fileID: 9152924268337633027}
   - component: {fileID: 1597735032971096795}
   - component: {fileID: 7312819425956686367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2038,7 +1996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3555841911203490490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftTire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2032,7 @@ GameObject:
   - component: {fileID: 5949003866910084784}
   - component: {fileID: 1043711989646690257}
   - component: {fileID: 4258526637271149839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RearLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2177,7 @@ GameObject:
   - component: {fileID: 1847012347942805916}
   - component: {fileID: 3645012738972694161}
   - component: {fileID: 1633914849454091177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrontLeftWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2300,7 +2258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5113045180622560498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2336,7 +2294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5038045313477678606}
   - component: {fileID: 1348485117838631862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TrailightDrift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SparklesPurple
       objectReference: {fileID: 0}
+    - target: {fileID: 3952460776916262264, guid: d12dba6e655be8347902944d72eaebbb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5159105127557039883, guid: d12dba6e655be8347902944d72eaebbb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2579,6 +2541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlamesRight
       objectReference: {fileID: 0}
+    - target: {fileID: 75390048736783408, guid: 2b5ffe6a3b7b708499bd911252624942, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 267740626831950192, guid: 2b5ffe6a3b7b708499bd911252624942, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -2605,6 +2571,10 @@ PrefabInstance:
     - target: {fileID: 3952460776916262264, guid: d12dba6e655be8347902944d72eaebbb, type: 3}
       propertyPath: m_Name
       value: SparklesPurple
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952460776916262264, guid: d12dba6e655be8347902944d72eaebbb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5159105127557039883, guid: d12dba6e655be8347902944d72eaebbb, type: 3}
       propertyPath: m_RootOrder
@@ -2673,6 +2643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SparklesBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 2391635286312541365, guid: 0676dd87bd6e5e64da1ca1a40fb067b4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6982906746365774269, guid: 0676dd87bd6e5e64da1ca1a40fb067b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2739,6 +2713,10 @@ PrefabInstance:
     - target: {fileID: 4524392995432709199, guid: 58e676601623b8940bc8a0a4c3044489, type: 3}
       propertyPath: m_Name
       value: SparklesOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524392995432709199, guid: 58e676601623b8940bc8a0a4c3044489, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8343934905989937044, guid: 58e676601623b8940bc8a0a4c3044489, type: 3}
       propertyPath: m_RootOrder
@@ -2807,6 +2785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SparklesOrange
       objectReference: {fileID: 0}
+    - target: {fileID: 4524392995432709199, guid: 58e676601623b8940bc8a0a4c3044489, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8343934905989937044, guid: 58e676601623b8940bc8a0a4c3044489, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2873,6 +2855,10 @@ PrefabInstance:
     - target: {fileID: 2391635286312541365, guid: 0676dd87bd6e5e64da1ca1a40fb067b4, type: 3}
       propertyPath: m_Name
       value: SparklesBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391635286312541365, guid: 0676dd87bd6e5e64da1ca1a40fb067b4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6982906746365774269, guid: 0676dd87bd6e5e64da1ca1a40fb067b4, type: 3}
       propertyPath: m_RootOrder
@@ -2984,6 +2970,10 @@ PrefabInstance:
     - target: {fileID: 75390048736783408, guid: 2b5ffe6a3b7b708499bd911252624942, type: 3}
       propertyPath: m_Name
       value: FlamesLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 75390048736783408, guid: 2b5ffe6a3b7b708499bd911252624942, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b5ffe6a3b7b708499bd911252624942, type: 3}

@@ -9,12 +9,17 @@ using UnityEngine.VFX.Utility;
 
 public class CarManager : NetworkBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
 
-    private float _steer = 0f;
-    private float _acceleration = 0f;
+    public struct Inputs
+    {
+        public float steer;
+        public float acceleration;
+        public bool wantDrifting;
+    }
+
+    private Inputs _actualInput;
     public bool IsDead = false;
-    private bool _canDrift = false;
     private bool _isDrifting = false;
     private bool _isTurbo = false;
     private float _driftTimer = 0f;
@@ -38,6 +43,7 @@ public class CarManager : NetworkBehaviour
     public Transform GroundedPointLeft;
     public Transform GroundedPointRight;
     [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject Sphere;
 
     [Header("Visual Transform")]
     public Transform VisualCar;
@@ -84,12 +90,20 @@ public class CarManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        rb = GetComponent<Rigidbody>();
+        SpawnSphereServerRpc(transform.position);
+        /*rb = Instantiate(Sphere,transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.gameObject.GetComponent<NetworkObject>().Spawn(true);*/
         if (IsOwner)
         {
             camera.SetActive(true);
         }
 
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void SpawnSphereServerRpc(Vector3 pos)
+    {
+        rb = Instantiate(Sphere, pos, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.gameObject.GetComponent<NetworkObject>().Spawn(true);
     }
 
     // Update is called once per frame
@@ -98,25 +112,18 @@ public class CarManager : NetworkBehaviour
         if (!IsOwner) return;
         if (IsDead) return; 
         _localVelocity = transform.InverseTransformDirection(rb.velocity);
+        Debug.Log(_localVelocity);
         //before physic
         IsGrounded();
 
         //Physic
-        ForwardForce();
-        TurnForce();
-        Drifting();
-        AddGravity();
-        CorrectRotation();
-
-
-        //car visuals
+        HandlePlayerInput();
     }
 
     private void Update()
     {
         if (!IsOwner) return;
-
-        GetInputs();
+        _actualInput = GetInputs();
         SteeringWheel();
         TurnWheel();
         CheckSparklesDrift();
@@ -125,17 +132,19 @@ public class CarManager : NetworkBehaviour
 
 
     #region Before Physic
-    private void GetInputs()
+    private Inputs GetInputs()
     {
-        _steer = Input.GetAxis("Horizontal");
-        _acceleration = Input.GetAxis("Vertical");
-        _canDrift = Input.GetKey(KeyCode.Space);
+        return new Inputs() { 
+            steer = Input.GetAxis("Horizontal"), 
+            acceleration = Input.GetAxis("Vertical"),
+            wantDrifting = Input.GetKey(KeyCode.Space)
+        };
     }
     private void IsGrounded()
     {
 
-        bool left = Physics.Raycast(GroundedPointLeft.position, -GroundedPointLeft.up, out RaycastHit hitleft, 0.1f);
-        bool right = Physics.Raycast(GroundedPointRight.position, -GroundedPointLeft.up, out RaycastHit hitright, 0.1f);
+        bool left = Physics.Raycast(GroundedPointLeft.position, -GroundedPointLeft.up, out RaycastHit hitleft, 0.1f * 10);
+        bool right = Physics.Raycast(GroundedPointRight.position, -GroundedPointLeft.up, out RaycastHit hitright, 0.1f * 10);
         if (left && hitleft.collider.tag.Equals("Wall"))
         {
             left = false;
@@ -180,37 +189,60 @@ public class CarManager : NetworkBehaviour
     #endregion
 
     #region Physic
-    private void ForwardForce()
+
+    private void HandlePlayerInput()
     {
-        if (_acceleration > 0f && _grounded)
+        Inputs playerInput = _actualInput;
+        HandlePhysicServerRpc(playerInput.steer, playerInput.acceleration, playerInput.wantDrifting);
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void HandlePhysicServerRpc(float steer, float acceleration, bool wantDrifting)
+    {
+        ForwardForce(acceleration);
+        TurnForce(steer,acceleration);
+        Drifting(steer,wantDrifting);
+        AddGravity();
+        //CorrectRotation();
+        FollowSphere();
+    }
+
+
+    private void ForwardForce(float acceleration)
+    {
+        if (acceleration > 0f && _grounded)
+        {
             rb.AddRelativeForce(Vector3.forward * (speed+additionnalSpeed));
-        else if (_acceleration < 0f && _grounded)
-            rb.AddRelativeForce(Vector3.forward * (-(speed/1.5f)-additionnalSpeed)); 
-    }
-
-    private void TurnForce()
-    {
-        
-        
-        if (Mathf.Abs(_localVelocity.z) > 0.1f)
+        }
+        else if (acceleration < 0f && _grounded)
         {
-            float yRot = rb.transform.rotation.eulerAngles.y + _steer * SteeringForce * (_localVelocity.z > 0 ? 1 : -1) * (4-Mathf.Abs(_acceleration))/4 * Time.fixedDeltaTime;
-            float lerpRot = Mathf.LerpAngle(rb.transform.rotation.eulerAngles.y, yRot, 1);
-            rb.rotation = Quaternion.Euler(new Vector3(rb.transform.rotation.eulerAngles.x, yRot, rb.transform.rotation.eulerAngles.z));
+            rb.AddRelativeForce(Vector3.forward * (-(speed / 1.5f) - additionnalSpeed)); 
         }
     }
 
-    private void Drifting()
+    private void TurnForce(float steer, float acceleration)
     {
-        if(rb.velocity.magnitude < 5f || _localVelocity.z < 0 || (Mathf.Abs(_steer) < .65f && !_isDrifting))
+        
+        
+        if (Mathf.Abs(_localVelocity.z) > 0.1f && !_isDrifting)
         {
-            _canDrift = false;
+            float yRot = rb.transform.rotation.eulerAngles.y + steer * SteeringForce * (_localVelocity.z > 0 ? 1 : -1) * (4-Mathf.Abs(acceleration))/4 * Time.fixedDeltaTime;
+
+            rb.transform.rotation = Quaternion.Euler(new Vector3(rb.transform.transform.rotation.eulerAngles.x, yRot, rb.transform.transform.rotation.eulerAngles.z));
         }
-        if (_canDrift && _grounded)
+    }
+
+    private void Drifting(float steer, bool wantDrifting)
+    {
+        bool canDrift = wantDrifting;
+        if(rb.velocity.magnitude < 5f || _localVelocity.z < 0 || (Mathf.Abs(steer) < .65f && !_isDrifting))
+        {
+            canDrift = false;
+        }
+        if (canDrift && _grounded)
         {
             _driftTimer += Time.fixedDeltaTime;
 
-            DriftTurn();
+            DriftTurn(steer);
 
             InversionVelocity();
 
@@ -248,16 +280,19 @@ public class CarManager : NetworkBehaviour
     /// <summary>
     /// Defines the rotation of the car during the drift
     /// </summary>
-    private void DriftTurn()
+    private void DriftTurn(float steer)
     {
         float turnDirection = (-_localVelocity.x > 0 ? 1 : -1);
 
         float constantTurnInDrift = SteeringForce * ConstantTurnDrift * turnDirection;
 
-        float additionalTurn = (_steer + 1 * turnDirection) / DriftOverSteerDivider * SteeringForce;
+        float additionalTurn = (steer + 1 * turnDirection) / DriftOverSteerDivider * SteeringForce;
 
 
         float yRot = rb.transform.rotation.eulerAngles.y + (constantTurnInDrift + additionalTurn) * Time.fixedDeltaTime;
+
+        Debug.Log("dir : " + turnDirection + " | constantTurn : " + constantTurnInDrift + " | addTurn : " + additionalTurn);
+
         float lerpRot = Mathf.LerpAngle(rb.transform.rotation.eulerAngles.y, yRot, .8f);
 
         rb.rotation = Quaternion.Euler(new Vector3(rb.transform.rotation.eulerAngles.x, lerpRot, rb.transform.rotation.eulerAngles.z));
@@ -276,7 +311,7 @@ public class CarManager : NetworkBehaviour
         {
             _localVelocity.x = _localVelocity.x + InversionAxisVelocity * Time.fixedDeltaTime;
         }
-        _localVelocity.z = _localVelocity.z + InversionAxisVelocity/3 * Time.fixedDeltaTime;
+        _localVelocity.z = _localVelocity.z + InversionAxisVelocity / 3 * Time.fixedDeltaTime;
         rb.velocity = transform.TransformDirection(_localVelocity);
     }
 
@@ -309,20 +344,26 @@ public class CarManager : NetworkBehaviour
         
         if (_needRotCorrection)
         {
-           /* Debug.Log("Rotation correction");
+            Debug.Log("Rotation correction");
             var carRotation = rb.transform.rotation.eulerAngles;
             var LerpX = Mathf.LerpAngle(carRotation.x, 0, RealignementForce * 0.0001f);
             var LerpZ = Mathf.LerpAngle(carRotation.z, 0, RealignementForce * 0.0001f);
-            rb.rotation = Quaternion.Euler(new Vector3(LerpX,carRotation.y,LerpZ));*/
+            rb.rotation = Quaternion.Euler(new Vector3(LerpX,carRotation.y,LerpZ));
         }
     }
     #endregion
 
     #region car Visuals
+
+    private void FollowSphere()
+    {
+        transform.position = Vector3.Lerp(transform.position, rb.position, 0.8f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rb.rotation, 0.8f);
+    }
     private void SteeringWheel()
     {
         var leftLocalEuler = FL_turn.localEulerAngles;
-        leftLocalEuler.y = _steer * 40f;
+        leftLocalEuler.y = _actualInput.steer * 40f;
         FL_turn.localEulerAngles = leftLocalEuler;
         FR_turn.localEulerAngles = leftLocalEuler;
     }

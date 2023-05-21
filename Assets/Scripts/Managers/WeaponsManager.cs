@@ -1,8 +1,9 @@
 using System;
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 
-public class WeaponsManager : MonoBehaviour
+public class WeaponsManager : NetworkBehaviour
 {
 
     public GameObject _currentWeapon = null;
@@ -18,9 +19,8 @@ public class WeaponsManager : MonoBehaviour
     private Rigidbody rb;
     private CarManager carManager;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        rb = GetComponent<Rigidbody>();
         carManager = GetComponent<CarManager>();
     }
 
@@ -84,7 +84,12 @@ public class WeaponsManager : MonoBehaviour
             carManager.additionnalSpeed = 15f;
         }
         Debug.Log(DateTime.Now);
-        StartCoroutine(weaponVisual.ActivateWeapon(rb.velocity, ResetWeapon));
+        if (!rb)
+        {
+            rb = carManager.rb;
+        }
+            StartCoroutine(weaponVisual.ActivateWeapon(rb.velocity, ResetWeapon));
+
         
     }
 

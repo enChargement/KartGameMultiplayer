@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59863396}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,8 @@ GameObject:
   - component: {fileID: 136272456}
   - component: {fileID: 136272455}
   - component: {fileID: 136272453}
-  m_Layer: 6
+  - component: {fileID: 136272457}
+  m_Layer: 9
   m_Name: CarBlue (5)
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -1009,6 +1010,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &136272457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136272451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2744722861
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!4 &137468253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1689149949348814238, guid: e7c16a06f82aeae498a1e2b1b963726e, type: 3}
@@ -1228,7 +1245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166980246}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,6 +1925,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4200525125
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -1964,7 +1985,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1249084622
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &228143270 stripped
 Transform:
@@ -2810,6 +2836,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3069412262
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -2866,7 +2896,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2134051920
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &317867914 stripped
 Transform:
@@ -3490,7 +3525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391691105}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3524,7 +3559,8 @@ GameObject:
   - component: {fileID: 391906368}
   - component: {fileID: 391906367}
   - component: {fileID: 391906365}
-  m_Layer: 6
+  - component: {fileID: 391906369}
+  m_Layer: 9
   m_Name: CarBlue (2)
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -3598,6 +3634,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &391906369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391906363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3064992266
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &397934704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3684,7 +3736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404722235}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3934,7 +3986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424498252}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4226,7 +4278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442699478}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4569,7 +4621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505683527}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5058,6 +5110,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2326428192
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -5114,7 +5170,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2931744853
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &565196792 stripped
 Transform:
@@ -5806,6 +5867,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2586509401
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -5862,7 +5927,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 833384603
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &660215559 stripped
 Transform:
@@ -6531,7 +6601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755449894}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6952,7 +7022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821101630}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8214,7 +8284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925231936}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8313,7 +8383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 932905999}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8429,7 +8499,8 @@ GameObject:
   - component: {fileID: 948556599}
   - component: {fileID: 948556598}
   - component: {fileID: 948556596}
-  m_Layer: 6
+  - component: {fileID: 948556600}
+  m_Layer: 9
   m_Name: CarBlue (1)
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -8503,6 +8574,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &948556600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948556594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2587774111
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!4 &948632422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2619378971236727730, guid: cdb30a236ae4ea146acc9d3bab111744, type: 3}
@@ -8896,6 +8983,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1899024150
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -8976,7 +9067,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1415294260
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &1017408030 stripped
 Transform:
@@ -9334,6 +9430,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 438419577}
     m_Modifications:
+    - target: {fileID: -369423068478005625, guid: 37479304a30c67540a51beab1f7ac498, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2150142675
+      objectReference: {fileID: 0}
     - target: {fileID: 2940103160765780529, guid: 37479304a30c67540a51beab1f7ac498, type: 3}
       propertyPath: m_Name
       value: Turret(visual)
@@ -9610,19 +9710,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -9630,7 +9730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -9690,11 +9790,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -9712,7 +9812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076845629}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10138,19 +10238,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -10158,7 +10258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -10218,11 +10318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -10375,7 +10475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160025004}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10551,7 +10651,8 @@ GameObject:
   - component: {fileID: 1194395974}
   - component: {fileID: 1194395973}
   - component: {fileID: 1194395971}
-  m_Layer: 6
+  - component: {fileID: 1194395975}
+  m_Layer: 9
   m_Name: CarBlue (3)
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -10625,6 +10726,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1194395975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194395969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2018725896
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1196918773
 GameObject:
   m_ObjectHideFlags: 0
@@ -10634,7 +10751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196918774}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10991,7 +11108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223225638}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11850,6 +11967,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2496904577
+      objectReference: {fileID: 0}
     - target: {fileID: 3089538601780856082, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -11898,7 +12019,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2956852517
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!1 &1325591490
 GameObject:
@@ -11909,7 +12035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325591491}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12255,7 +12381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1397266755}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12284,6 +12410,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2079017480
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -12356,7 +12486,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2970656086
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &1402949656 stripped
 Transform:
@@ -12454,7 +12589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411108444}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12485,7 +12620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1412241340}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12524,7 +12659,8 @@ GameObject:
   - component: {fileID: 1430013631}
   - component: {fileID: 1430013630}
   - component: {fileID: 1430013628}
-  m_Layer: 6
+  - component: {fileID: 1430013632}
+  m_Layer: 9
   m_Name: CarBlue (4)
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -12598,6 +12734,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1430013632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430013626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2030724936
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &1434345829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12930,7 +13082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463094061}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13204,6 +13356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2978531225
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -13260,7 +13416,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3871373629
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &1512268266 stripped
 Transform:
@@ -13353,19 +13514,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -13373,7 +13534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -13433,11 +13594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -15087,7 +15248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773079878}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16252,7 +16413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937571144}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16820,7 +16981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2018475092}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16851,19 +17012,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -16871,7 +17032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -16931,11 +17092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -17203,6 +17364,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322738139}
     m_Modifications:
+    - target: {fileID: -7608078193132555072, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1380315068
+      objectReference: {fileID: 0}
     - target: {fileID: -3259467185320168967, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
       propertyPath: weapons.Array.size
       value: 1
@@ -17259,7 +17424,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MisteryBox (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6416864049477494088, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 508559876
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3788997262483473487, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e84986c4c6efd5449a5018cbe4d0c5b, type: 3}
 --- !u!4 &2056055510 stripped
 Transform:
@@ -17652,19 +17822,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -17672,7 +17842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -17732,11 +17902,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -18009,7 +18179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136368917}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18155,7 +18325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143646086}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18239,7 +18409,8 @@ GameObject:
   - component: {fileID: 235011892420665945}
   - component: {fileID: 235011892420665946}
   - component: {fileID: 1613943981656680653}
-  m_Layer: 6
+  - component: {fileID: 1613943981656680654}
+  m_Layer: 9
   m_Name: CarBlue
   m_TagString: BlueTeam
   m_Icon: {fileID: 0}
@@ -18255,19 +18426,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011782430612766, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1124220159191248, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1555373351747156, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1755357915283268, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Name
@@ -18275,7 +18446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1850322742259794, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4713172197556060, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_RootOrder
@@ -18335,11 +18506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2797305521711231863, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3318324665186815200, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49a8bcd44434de4fbd15b46bf3fd304, type: 3}
@@ -18372,7 +18543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441963928132134959}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundedPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18403,7 +18574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441963930098918535}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: StateWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18434,7 +18605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541828550309064529}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18473,6 +18644,22 @@ MonoBehaviour:
   _aerianWeaponSpawn: {fileID: 0}
   _backWeaponSpawn: {fileID: 0}
   _stateWeaponSpawn: {fileID: 0}
+--- !u!114 &1613943981656680654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235011892420665948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2811530880
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &4303149656772304478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18552,7 +18739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5765708756547743776}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BackWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18583,7 +18770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1303800284477502038}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: AerianWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

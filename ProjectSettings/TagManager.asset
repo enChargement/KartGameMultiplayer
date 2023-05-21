@@ -8,6 +8,7 @@ TagManager:
   - BlueTeam
   - Ground
   - Wall
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - player
   - Collectable
   - ignorePlayer
-  - 
+  - SphereCar
   - 
   - 
   - 

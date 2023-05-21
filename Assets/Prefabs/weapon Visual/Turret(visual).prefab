@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2940103160765943313}
   - component: {fileID: 6356452542372108553}
+  - component: {fileID: -369423068478005625}
   m_Layer: 3
   m_Name: Turret(visual)
   m_TagString: RedTeam
@@ -51,6 +52,22 @@ MonoBehaviour:
   _weaponInstance: {fileID: 0}
   _head: {fileID: 2940103160765943317}
   _muzzleFlash: {fileID: 19800004, guid: 7e9c50938e32351438a7df9ccad2f2a5, type: 3}
+--- !u!114 &-369423068478005625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940103160765780529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2940103160765780531
 GameObject:
   m_ObjectHideFlags: 0

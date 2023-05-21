@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3089538599067729678}
   - component: {fileID: 2905214234463823424}
   - component: {fileID: 2894959642565248968}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: StarsParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4800,7 +4800,7 @@ GameObject:
   - component: {fileID: 3070107305463141218}
   - component: {fileID: 3080388899375038834}
   - component: {fileID: 33000011144170034}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Box001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,7 +4904,7 @@ GameObject:
   - component: {fileID: 3089538601780856082}
   - component: {fileID: -3259467185320168967}
   - component: {fileID: 1200843601696525766}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: MisteryBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

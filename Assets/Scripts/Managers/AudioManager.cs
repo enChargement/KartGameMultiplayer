@@ -33,8 +33,8 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         carManager = GetComponent<CarManager>();
+        rb = carManager.rb;
         EngineSound.clip = idle;
         EngineSound.Play();
     }
